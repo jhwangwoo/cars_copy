@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useSyncExternalStore } from "react";
+import { useState } from "react";
 import Image from "next/image";
-import { CarProps } from "@/types";
 import { calculateCarRent, generateCarImageUrl } from "@/utils";
+import { CarProps } from "@/types";
 import CustomButton from "./CustomButton";
 import CarDetails from "./CarDetails";
 
@@ -13,6 +13,7 @@ interface CarCardProps {
 
 const CarCard = ({ car }: CarCardProps) => {
   const { city_mpg, year, make, model, transmission, drive } = car;
+
   const [IsOpen, setIsOpen] = useState(false);
 
   const carRent = calculateCarRent(city_mpg, year);
@@ -37,6 +38,7 @@ const CarCard = ({ car }: CarCardProps) => {
           fill
           priority
           className="object-contain"
+          sizes="(max-width: 640px) 100vw, 50vw" // sizes 속성 추가
         />
       </div>
       <div className="relative flex w-full mt2">
@@ -57,7 +59,7 @@ const CarCard = ({ car }: CarCardProps) => {
             <p className="text=[14px]">{drive.toUpperCase()}</p>
           </div>
           <div className="flex flex-col justify-center items-center gap-2">
-            <Image src="/gas.svg" width={20} height={20} alt="gas" />
+            <Image src="/gas.svg" width={20} height={22.22} alt="gas" />
             <p className="text=[14px]">{city_mpg} MPG</p>
           </div>
         </div>
@@ -72,6 +74,7 @@ const CarCard = ({ car }: CarCardProps) => {
         </div>
       </div>
       <CarDetails
+        key={`car-details-${car.id}`}
         isOpen={IsOpen}
         closeModal={() => setIsOpen(false)}
         car={car}

@@ -62,6 +62,7 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                         fill
                         priority
                         className="object-contain"
+                        sizes="(max-width: 640px) 100vw, 50vw" // sizes 속성 추가
                       />
                     </div>
 
@@ -73,6 +74,7 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                           fill
                           priority
                           className="object-contain"
+                          sizes="(max-width: 640px) 100vw, 50vw" // sizes 속성 추가
                         />
                       </div>
                       <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
@@ -82,7 +84,7 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                           fill
                           priority
                           className="object-contain"
-                          style={{ top: "20%" }}
+                          sizes="(max-width: 640px) 100vw, 50vw" // sizes 속성 추가
                         />
                       </div>
                       <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
@@ -92,6 +94,7 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                           fill
                           priority
                           className="object-contain"
+                          sizes="(max-width: 640px) 100vw, 50vw" // sizes 속성 추가
                         />
                       </div>
                     </div>
